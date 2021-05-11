@@ -8,12 +8,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About";
 
 function App() {
-
-  let initTodo
+  let initTodo;
   if (localStorage.getItem("todos") === null) {
     initTodo = [];
-  }else{
-    initTodo = JSON.parse(localStorage.getItem("todos"))
+  } else {
+    initTodo = JSON.parse(localStorage.getItem("todos"));
   }
 
   const onDelete = (todo) => {
@@ -21,9 +20,10 @@ function App() {
     setTodos(
       todos.filter((e) => {
         return e !== todo;
-      }));
+      })
+    );
 
-      // localStorage.setItem("todos", JSON.stringify(todos));
+    // localStorage.setItem("todos", JSON.stringify(todos));
   };
 
   const addTodo = (title, desc, severity, date) => {
@@ -35,12 +35,12 @@ function App() {
     }
 
     let alertColor;
-    console.log(severity)
-    if(severity==="Critical"){
+    console.log(severity);
+    if (severity === "Critical") {
       alertColor = "alert animate-bottom alert-danger";
-    }else if (severity === "Moderate") {
+    } else if (severity === "Moderate") {
       alertColor = "alert animate-bottom alert-info";
-    }else{
+    } else {
       alertColor = "alert animate-bottom alert-success";
     }
 
@@ -56,32 +56,36 @@ function App() {
   };
 
   const [todos, setTodos] = useState(initTodo);
-  
+
   useEffect(() => {
-        localStorage.setItem("todos", JSON.stringify(todos));
-    }, [todos]);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div>
       <Router>
         <Header title="My Todo" />
-          <Switch>
-            <Route exact path="/" render={()=>{
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
               return (
                 <>
                   <AddTodo addTodo={addTodo} />
                   <Todos todos={todos} onDelete={onDelete} />
                 </>
-                );
-            }}>
-            </Route>
-
-            <Route exact path="/about">
-              <About/>
-            </Route>
-            </Switch>
-            <Footer/>
-       </Router>
+              );
+            }}
+          ></Route>
+          <Route exactpath="/about" render={() => {
+              return <About />;
+            }}
+          ></Route>
+          
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

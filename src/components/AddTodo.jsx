@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
 
 export const AddTodo = (props) => {
 
@@ -9,9 +10,19 @@ export const AddTodo = (props) => {
     const submit = (e)=>{
         e.preventDefault();
         if(!title || !desc){
-            alert("Title or Description cannot be blanck")
+            // alert("Title or Description cannot be blanck")
+            swal({
+              title: "All fields required",
+              text: "Title or Description cannot be blank!",
+              icon: "error"
+            });
         }else{
             props.addTodo(title, desc, severity, new Date().toLocaleString());
+            swal({
+              title: "Yayy!",
+              text: "Todo added success fully",
+              icon: "success",
+            });
             setTitle("");
             setDesc("");
             setSeverity("");

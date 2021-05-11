@@ -9,7 +9,8 @@ export const TodoItem = ({todo, onDelete}) => {
       color: "black",
       borderRadius : "9px",
       boxShadow: "5px 5px 8px #888888",
-      marginBottom : "25px",
+      margin : "25px",
+      width:"25%",
     }
 
     return (

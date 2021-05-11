@@ -3,9 +3,13 @@ import { TodoItem } from './TodoItem'
 
 export const Todos = (props) => {
     const TodosStyle = {
-      minHeight: "70vh",
-      margin: "40px auto",
-    };
+      minHeight: "",
+      display: "flex",
+      width: "100%",
+      flexWrap :"wrap",
+      justifyContent:"center",
+      alignItems: "center",
+      };
     return (
         <div className="container">
             <h3 className="text-center">Todo List</h3>
