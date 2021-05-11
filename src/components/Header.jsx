@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link } from "react-router-dom";
 
 export const Header = (props) => {
+
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="navbar-brand" to="#">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="#">
             {props.title}
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -24,15 +24,9 @@ export const Header = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <Link className="nav-link" to="/">
-                  Home <span className="sr-only">(current)</span>
-                </Link>
+               <a className="nav-link" href="#">Home</a>
               </li>
-              <li className="nav-item active">
-                <Link className="nav-link" to="/about">
-                  About <span className="sr-only">(current)</span>
-                </Link>
-              </li>
+            
             </ul>
           </div>
         </nav>

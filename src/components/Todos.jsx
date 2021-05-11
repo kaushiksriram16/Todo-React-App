@@ -3,7 +3,7 @@ import { TodoItem } from './TodoItem'
 
 export const Todos = (props) => {
     const TodosStyle = {
-      minHeight: "",
+      minHeight: "70vh",
       display: "flex",
       width: "100%",
       flexWrap :"wrap",
