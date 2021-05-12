@@ -2,6 +2,7 @@ import React from 'react'
 import { TodoItem } from './TodoItem'
 
 export const Todos = (props) => {
+
     const TodosStyle = {
       minHeight: "70vh",
       display: "flex",
@@ -10,11 +11,12 @@ export const Todos = (props) => {
       justifyContent:"center",
       alignItems: "center",
       };
+
     return (
         <div className="container">
-            <h3 className="text-center">Todo List</h3>
+            <h3 className="heading">Todo List</h3>
             <div style={TodosStyle}>
-            {props.todos.length === 0? <p className='alert alert-info'>No Todos to Display</p> : 
+            {props.todos.length === 0? <p className='alert alert-info w-100'>No Todos to Display</p> : 
                 props.todos.map((todo)=>{
                     return (
                       <>

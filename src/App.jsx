@@ -65,7 +65,6 @@ function App() {
       <AddTodo addTodo={addTodo} />
       <Todos todos={todos} onDelete={onDelete} />
       <Footer />
-
     </div>
   );
 }

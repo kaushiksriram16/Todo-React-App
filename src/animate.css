@@ -1,3 +1,32 @@
+
+input[type=checkbox] {
+    display: inline;
+    zoom: 1.5;
+    cursor: pointer;
+}
+
+.heading{
+  background-color: #343a40;
+  color: white;
+  width: fit-content;
+  margin: 25px auto;
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.checked{
+  text-decoration: line-through;
+}
+.unchecked{
+  text-decoration: initial;
+}
+
+#title{
+  margin-right: 10px;
+  display: inline;
+}
+
 .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;

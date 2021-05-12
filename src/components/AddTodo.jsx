@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import swal from "sweetalert";
+import "../animate.css";
 
 export const AddTodo = (props) => {
 
@@ -10,7 +11,6 @@ export const AddTodo = (props) => {
     const submit = (e)=>{
         e.preventDefault();
         if(!title || !desc){
-            // alert("Title or Description cannot be blanck")
             swal({
               title: "All fields required",
               text: "Title or Description cannot be blank!",
@@ -20,19 +20,18 @@ export const AddTodo = (props) => {
             props.addTodo(title, desc, severity, new Date().toLocaleString());
             swal({
               title: "Yayy!",
-              text: "Todo added success fully",
+              text: "Todo added Successfully",
               icon: "success",
             });
             setTitle("");
             setDesc("");
-            setSeverity("");
         }
     }
 
 
     return (
       <div className="container my-3">
-        <h3 className="text-center">Add a Todo</h3>
+        <h3 className="heading">Add a Todo</h3>
         <form onSubmit={submit}>
           <div className="mb-3">
             <label htmlFor="title">Todo Title</label>
@@ -60,17 +59,18 @@ export const AddTodo = (props) => {
           <div className="mb-3">
             <label htmlFor="severity">Severity of the task</label>
             <select className="form-control" name="severity" onChange={(e) => setSeverity(e.target.value)}>
-              <option value="" selected disabled>Please select</option>
-              <option>Critical</option>
-              <option>Moderate</option>
-              <option>Normal</option>
+              <option selected disabled>Please select</option>
+              <option value="Critical">Critical</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Normal">Normal</option>
             </select>
           </div>
 
           <button type="submit" className="btn btn-sm btn-success">
             Submit
           </button>
-        </form>
+        </form><br />
+        <hr />
       </div>
     );
 }
