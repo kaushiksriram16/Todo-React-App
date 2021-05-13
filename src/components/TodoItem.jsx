@@ -18,7 +18,7 @@ export const TodoItem = ({ todo, onDelete }) => {
 
   return (
     <div className={todo.alertColor} style={TodoItemStyle}>
-      <h4 id="title" className={checkbox ? 'checked': 'unchecked' }>
+      <h4 id="title">
         <b>{todo.title}</b>
       </h4>
       <small>
