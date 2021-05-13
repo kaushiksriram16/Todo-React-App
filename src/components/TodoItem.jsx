@@ -21,11 +21,10 @@ export const TodoItem = ({ todo, onDelete }) => {
       <h4 id="title" className={checkbox ? 'checked': 'unchecked' }>
         <b>{todo.title}</b>
       </h4>
-      <input type="checkbox" id="done" className="done" onChange={() => { checkbox ? setCheckbox(false) : setCheckbox(true)} }/>
       <small>
         <p>Added on {todo.date}</p>
       </small>
-      <p className={checkbox ? 'checked': 'unchecked' }>{todo.desc}</p>
+      <p>{todo.desc}</p>
 
       <button
         className="btn btn-danger btn-sm"
