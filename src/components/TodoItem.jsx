@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../animate.css'
 
 export const TodoItem = ({ todo, onDelete }) => {
-
-  const [checkbox, setCheckbox] = useState(false);
 
   const TodoItemStyle = {
     overflowWrap: "wrap",
@@ -12,7 +10,7 @@ export const TodoItem = ({ todo, onDelete }) => {
     borderRadius: "9px",
     boxShadow: "5px 5px 8px #888888",
     margin: "25px",
-    width: "25%",
+    maxWidth: "800px",
   }
   
 
